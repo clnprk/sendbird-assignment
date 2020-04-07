@@ -16,16 +16,18 @@ var timestamp = + new Date();
 
 // Body of admin message 
 var post_data = JSON.stringify({
-  'message_type': 'ADMM',
-  'message': 
-  '┌──────────────────────────────────┐\n' +
-  '│                                  │\n' +
-  '│   *  Welcome to Group Chat!  *   │\n' +
-  '│                                  │\n' +
-  '└──────────────────────────────────┘\n',
+  "message_type": "ADMM",
+  "message": 
+  "┌────────────────────────────────┐ \n" +
+  "│                                │ \n" +
+  "│  *  Welcome to Group Chat!  *  │ \n" +
+  "│                                │ \n" +
+  "└────────────────────────────────┘ \n",
   "created_at": timestamp 
 });
- 
+var DateCreated = new Date(timestamp * 1000);
+console.log('Created on ==> ' + DateCreated);
+
 // GET
 app.get('/', function(req, res) {
   res.sendfile('index.html');
