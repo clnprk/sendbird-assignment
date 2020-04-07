@@ -17,11 +17,14 @@ var timestamp = + new Date();
 // Body of admin message 
 var post_data = JSON.stringify({
   "message_type": "ADMM",
-  "message": "*  Welcome to Group Chat!  *",
+  "message": 
+  "******************************\n" +
+  "*   Welcome to Group Chat!   *\n" +
+  "******************************\n",
   "created_at": timestamp 
 });
 var DateCreated = new Date(timestamp * 1000);
-console.log('Created on ==> ' + DateCreated);
+console.log('\n\nCreated on ==> ' + DateCreated);
 
 // GET
 app.get('/', function(req, res) {
