@@ -15,9 +15,14 @@ var https = require('https');
 // Body of admin message 
 var post_data = JSON.stringify({
   'message_type': 'ADMM',
-  'message': 'Welcome to Group Channel!'
+  'message': 
+  '┌──────────────────────────────────┐\n' +
+  '│                                  │\n' +
+  '│   *  Welcome to Group Chat!  *   │\n' +
+  '│                                  │\n' +
+  '└──────────────────────────────────┘\n' 
 });
-  
+ 
 // GET
 app.get('/', function(req, res) {
   res.sendfile('index.html');
@@ -44,6 +49,7 @@ app.post("/webhook", (req, res) => {
   var req = https.request(post_options, function(res) {
     res.on('data', function (chunk) {
         console.log('Response => ' + chunk);
+        const timestamp = 
     });
   });
 
@@ -54,6 +60,9 @@ app.post("/webhook", (req, res) => {
   req.end();  
 });
 
+// var timestamp = 1545186677000;
+// var date = new Date(timestamp);
+//console.log(date);
 
 //app.listen(PORT);
 //console.log(`[SERVER RUNNING] 127.0.0.1:${PORT}`);
