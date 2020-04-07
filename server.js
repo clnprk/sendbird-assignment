@@ -14,22 +14,24 @@ var https = require('https');
 
 var timestamp = + new Date();
 var temp = 
-"******************************\n" + 
-"*   Welcome to Group Chat!   *\n" +
-"******************************\n";
+"**********************************\n" + 
+"*                                *\n" +
+"*     Welcome to Group Chat!     *\n" +
+"*                                *\n" +
+"**********************************\n";
 console.log(temp);
 var temp2 = 
-"┌──────────────────────────────────┐\n" + 
-"│                                  │\n" + 
-"│    * Welcome to Group Chat! *    │\n" + 
-"│                                  │\n" + 
-"└──────────────────────────────────┘\n" + 
+"┌────────────────────────────────┐\n" + 
+"│                                │\n" + 
+"│     Welcome to Group Chat!     │\n" + 
+"│                                │\n" + 
+"└────────────────────────────────┘\n" + 
 console.log(temp2);
 
 // Body of admin message 
 var post_data = JSON.stringify({
   "message_type": "ADMM",
-  "message": temp,
+  "message": temp + temp2,
   "created_at": timestamp 
 });
 var DateCreated = new Date(timestamp * 1000);
