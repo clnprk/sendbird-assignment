@@ -35,10 +35,8 @@ app.post("/webhook", (req, res) => {
   console.log('Admin msg => ' + JSON.stringify(AdminMsg));
 
   var options = {
-    host: 'api-F58FD34C-1E49-41AE-ACB4-F82B889ABAE1.sendbird.com/v3/group_channels/' + ChannelURL + '/messages',
-    path: '/',
-    //host: 'api-F58FD34C-1E49-41AE-ACB4-F82B889ABAE1.sendbird.com',
-    //path: '/v3/group_channels/' + ChannelURL + '/messages',
+    host: 'api-F58FD34C-1E49-41AE-ACB4-F82B889ABAE1.sendbird.com',
+    path: '/v3/group_channels/' + ChannelURL + '/messages',
     method: 'POST',
     json: true,
     header: headers,
@@ -51,10 +49,10 @@ app.post("/webhook", (req, res) => {
   var req = https.request(options, function(res) {
     console.log('Status => ' + res.statusCode);
   });
+
   req.end();  // No more request
 });
-  
-  
+
 
 //app.listen(PORT);
 //console.log(`[SERVER RUNNING] 127.0.0.1:${PORT}`);
