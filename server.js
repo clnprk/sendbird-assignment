@@ -10,6 +10,8 @@ app.use(express.static('./'));
 app.use(bodyParser.json());
 //app.use(bodyParser.urlencoded({ extended: true }));
 
+var https = require('https');
+
 // Body of admin message 
 var post_data = JSON.stringify({
   'message_type': 'ADMM',
@@ -40,7 +42,7 @@ app.post("/webhook", (req, res) => {
   };
   console.log("Data to send => " + JSON.stringify(post_options));
   
-  var req = http.request(post_options, function(res) {
+  var req = https.request(post_options, function(res) {
     res.on('data', function (chunk) {
         console.log('Response => ' + chunk);
     });
