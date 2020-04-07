@@ -29,9 +29,9 @@ app.get('/', function(req, res) {
 });
 
 // POST message
-app.get("/", (req, res) => {
+app.post("/webhook", (req, res) => {
   console.log("Received POST message from the server");
-  res.json(users);    
+  //res.json(users);    
 });
 
 //app.listen(PORT);
