@@ -13,14 +13,16 @@ app.use(bodyParser.json());
 var https = require('https');
 
 var timestamp = + new Date();
+var temp = 
+"******************************\n" + 
+"*   Welcome to Group Chat!   *\n" +
+"******************************\n";
+console.log(temp);
 
 // Body of admin message 
 var post_data = JSON.stringify({
   "message_type": "ADMM",
-  "message": 
-  "******************************\\n" + 
-  "*   Welcome to Group Chat!   *\\n" +
-  "******************************\\n",
+  "message": temp,
   "created_at": timestamp 
 });
 var DateCreated = new Date(timestamp * 1000);
