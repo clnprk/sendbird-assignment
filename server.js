@@ -41,13 +41,14 @@ app.post("/webhook", (req, res) => {
       'Api-Token': '7992c4dad48ff10c7e5369d3cc5a271901bf6b10'
     }
   };
-  //console.log("Data to send => " + JSON.stringify(post_options));
   
   var req = https.request(post_options, function(res) {
     res.on('data', function (chunk) {
         console.log('Response => ' + chunk);
     });
   });
+
+  console.log("Data to send => " + JSON.stringify(post_options));
 
   req.write(post_data);
   req.end();  
