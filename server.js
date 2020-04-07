@@ -2,38 +2,46 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 
-//const PORT = 9000;
-const PORT = process.env.PORT || 9000;
+//const PORT = 3000;
+const PORT = process.env.PORT || 3000;  // For Heroku, dynamic port assign
 
 app.use(express.static('dist'));
 app.use(express.static('./'));
 app.use(bodyParser.json());
-
-const users = [
-  {
-      id: "rjames",
-      name: "LeBron James",
-      email: "james@gmail.com"
-  },
-  {
-      id: "scurry",
-      name: "Stephen Curry",
-      email: "scurry@gmail.com"
-  }
-];
-
+//app.use(bodyParser.urlencoded({ extended: true }));
+  
+var headers = {
+  'Content-Type': 'application/json, charset=utf8',
+  'Api-Token': '7992c4dad48ff10c7e5369d3cc5a271901bf6b10'
+};
 
 app.get('/', function(req, res) {
   res.sendfile('index.html');
 });
 
-// POST message
 app.post("/webhook", (req, res) => {
   console.log("Received POST message from the server");
-  res.sendStatus(200);
+  res.sendStatus(200);  // responds with 200 - successfully received
   console.log(req.body);
-  //res.json(users);    
+
+  const ChannelURL = req.body.channel_url;
+
+  var options = {
+    host: "https://api-F58FD34C-1E49-41AE-ACB4-F82B889ABAE1.sendbird.com/v3/group_channels/" +    
+      ChannelURL + "/messages",
+    port: 443,
+    path: '/',
+    method: 'POST',
+    header: headers
+  };
+  // Request admin message
+  var https = require('https'); 
+  var req = https.request(options, function(res) {
+  });
 });
+  
+
+//res.json(users);    
 
 //app.listen(PORT);
 //console.log(`[SERVER RUNNING] 127.0.0.1:${PORT}`);
