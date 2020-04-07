@@ -37,7 +37,8 @@ app.post("/webhook", (req, res) => {
   var options = {
     //host: "https://api-F58FD34C-1E49-41AE-ACB4-F82B889ABAE1.sendbird.com/v3/group_channels/" + ChannelURL + "/messages",
     //path: '/',
-    host: 'https://api-F58FD34C-1E49-41AE-ACB4-F82B889ABAE1.sendbird.com',
+    //host: 'https://api-F58FD34C-1E49-41AE-ACB4-F82B889ABAE1.sendbird.com',
+    host: 'api-F58FD34C-1E49-41AE-ACB4-F82B889ABAE1.sendbird.com',
     path: '/v3/group_channels/' + ChannelURL + '/messages',
     method: 'POST',
     json: true,
