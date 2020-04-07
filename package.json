@@ -10,8 +10,6 @@
     "start:dev": "./node_modules/.bin/webpack-dev-server",
     "start": "npm run build && node server.js",
     "deploy": "node ./deploy/deploy.js"
-
-    
   },
   "author": "SendBird",
   "license": "ISC",

@@ -9,6 +9,7 @@ app.use(express.static('dist'));
 app.use(express.static('./'));
 app.use(bodyParser.json());
 
+
 const users = [
   {
       id: "rjames",
@@ -27,9 +28,10 @@ app.get('/', function(req, res) {
   res.sendfile('index.html');
 });
 
-app.get("/api/admin", (req, res) => {
-  console.log("Request from SendBirdAction");
-//  res.json(users);    
+// POST message
+app.get("/", (req, res) => {
+  console.log("Received POST message from the server");
+  res.json(users);    
 });
 
 //app.listen(PORT);
