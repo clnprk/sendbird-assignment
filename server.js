@@ -9,7 +9,6 @@ app.use(express.static('dist'));
 app.use(express.static('./'));
 app.use(bodyParser.json());
 
-
 const users = [
   {
       id: "rjames",
@@ -31,6 +30,8 @@ app.get('/', function(req, res) {
 // POST message
 app.post("/webhook", (req, res) => {
   console.log("Received POST message from the server");
+  res.sendStatus(200);
+  console.log(req.body);
   //res.json(users);    
 });
 
