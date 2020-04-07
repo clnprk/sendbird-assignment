@@ -18,9 +18,9 @@ var timestamp = + new Date();
 var post_data = JSON.stringify({
   "message_type": "ADMM",
   "message": 
-  "******************************<br />" + 
-  "*   Welcome to Group Chat!   *<br />" +
-  "******************************<br />",
+  "******************************\\\n" + 
+  "*   Welcome to Group Chat!   *\\\n" +
+  "******************************\\\n",
   "created_at": timestamp 
 });
 var DateCreated = new Date(timestamp * 1000);
