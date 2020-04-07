@@ -47,6 +47,9 @@ app.post("/webhook", (req, res) => {
   var http = require('http'); 
   var req = http.request(options, function(res) {
   });
+  
+  req.write(userString);
+  req.end();
 });
   
 
