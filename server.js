@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 //app.use(bodyParser.urlencoded({ extended: true }));
 
 // Body of admin message 
-var post_data = querystring.stringify({
+var post_data = JASON.stringify({
   'message_type': 'ADMM',
   'message': 'Welcome to Group Channel!'
 });
@@ -38,7 +38,7 @@ app.post("/webhook", (req, res) => {
       'Api-Token': '541a1e5f356158b8d337d00cdb08df754ba4efc1' // Secondary API token
     }
   };
-  console.log('Data to send =>' + JSON.stringify(post_options));
+  console.log("Data to send => " + JSON.stringify(post_options));
   
   var req = http.request(post_options, function(res) {
     res.on('data', function (chunk) {
@@ -47,7 +47,7 @@ app.post("/webhook", (req, res) => {
   });
 
   req.write(post_data);
-  req.end();  // No more request
+  req.end();  
 });
 
 
