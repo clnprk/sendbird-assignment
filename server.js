@@ -18,6 +18,13 @@ var temp =
 "*   Welcome to Group Chat!   *\n" +
 "******************************\n";
 console.log(temp);
+var temp2 = 
+"┌──────────────────────────────────┐\n" + 
+"│                                  │\n" + 
+"│    * Welcome to Group Chat! *    │\n" + 
+"│                                  │\n" + 
+"└──────────────────────────────────┘\n" + 
+console.log(temp2);
 
 // Body of admin message 
 var post_data = JSON.stringify({
@@ -55,7 +62,8 @@ app.post("/webhook", (req, res) => {
     });
   });
 
-  console.log("Data to send 1 => " + JSON.stringify(post_options));
+  //console.log("Data to send 1 => " + JSON.stringify(post_options));
+  req.write(post_data);
   req.end();  
 });
 
