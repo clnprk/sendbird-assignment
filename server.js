@@ -18,13 +18,13 @@ var timestamp = + new Date();
 var post_data = JSON.stringify({
   "message_type": "ADMM",
   "message": 
-  "******************************\\\n" + 
-  "*   Welcome to Group Chat!   *\\\n" +
-  "******************************\\\n",
+  "******************************\\n" + 
+  "*   Welcome to Group Chat!   *\\n" +
+  "******************************\\n",
   "created_at": timestamp 
 });
 var DateCreated = new Date(timestamp * 1000);
-console.log('\n\nCreated on ==> ' + DateCreated);
+//console.log('\n\nCreated on ==> ' + DateCreated);
 
 // GET
 app.get('/', function(req, res) {
@@ -54,9 +54,7 @@ app.post("/webhook", (req, res) => {
   });
 
   console.log("Data to send 1 => " + JSON.stringify(post_options));
-  req.write(post_data);
   req.end();  
-  console.log("Data to send 2 => " + post_data);
 });
 
 // var timestamp = 1545186677000;
