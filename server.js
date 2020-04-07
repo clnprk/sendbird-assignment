@@ -37,10 +37,11 @@ app.post("/webhook", (req, res) => {
     method: 'POST',
     header: {
       'Content-Type': 'application/json, charset=utf8',
-      'Api-Token': '541a1e5f356158b8d337d00cdb08df754ba4efc1' // Secondary API token
+      //'Api-Token': '541a1e5f356158b8d337d00cdb08df754ba4efc1' // Secondary API token
+      'Api-Token': '7992c4dad48ff10c7e5369d3cc5a271901bf6b10'
     }
   };
-  console.log("Data to send => " + JSON.stringify(post_options));
+  //console.log("Data to send => " + JSON.stringify(post_options));
   
   var req = https.request(post_options, function(res) {
     res.on('data', function (chunk) {
