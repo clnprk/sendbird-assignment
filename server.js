@@ -48,8 +48,8 @@ app.post("/webhook", (req, res) => {
 
   // Request admin message
   var http = require('http'); 
-  //var req = http.request(options, function(res) {
-  //});
+  var req = http.request(options, function(res) {
+  });
 });
   
   
