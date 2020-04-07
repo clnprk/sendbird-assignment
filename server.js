@@ -30,6 +30,7 @@ app.post("/webhook", (req, res) => {
     "message_type":"ADMM",
     "message": "Welcome to Group Channel!"
   }
+  console.log('Admin msg =>' + AdminMsg);
 
   var options = {
     host: "https://api-F58FD34C-1E49-41AE-ACB4-F82B889ABAE1.sendbird.com/v3/group_channels/" +    
@@ -40,6 +41,7 @@ app.post("/webhook", (req, res) => {
     header: headers,
     body: AdminMsg
   };
+  console.log('Data to send =>' + options);
 
   // Request admin message
   var http = require('http'); 
