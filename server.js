@@ -12,7 +12,7 @@ app.use(bodyParser.json());
   
 var headers = {
   'Content-Type': 'application/json, charset=utf8',
-  'Api-Token': '7992c4dad48ff10c7e5369d3cc5a271901bf6b10'
+  'Api-Token': '541a1e5f356158b8d337d00cdb08df754ba4efc1' // Secondary API token
 };
 
 // GET
@@ -38,7 +38,7 @@ app.post("/webhook", (req, res) => {
     host: 'api-F58FD34C-1E49-41AE-ACB4-F82B889ABAE1.sendbird.com',
     path: '/v3/group_channels/' + ChannelURL + '/messages',
     method: 'POST',
-    json: true,
+    //json: true,
     header: headers,
     body: AdminMsg
   };
