@@ -12,6 +12,8 @@ app.use(bodyParser.json());
 
 var https = require('https');
 
+var timestamp = + new Date();
+
 // Body of admin message 
 var post_data = JSON.stringify({
   'message_type': 'ADMM',
@@ -20,7 +22,8 @@ var post_data = JSON.stringify({
   '│                                  │\n' +
   '│   *  Welcome to Group Chat!  *   │\n' +
   '│                                  │\n' +
-  '└──────────────────────────────────┘\n' 
+  '└──────────────────────────────────┘\n',
+  "created_at": timestamp 
 });
  
 // GET
@@ -30,9 +33,7 @@ app.get('/', function(req, res) {
 
 // POST - for Webhook
 app.post("/webhook", (req, res) => {
-  console.log("Received POST message from the server");
   res.sendStatus(200);  // responds to the server with 200 - successfully received
-  console.log(req.body);
 
   const ChannelURL = req.body.channel.channel_url;
 
@@ -49,15 +50,13 @@ app.post("/webhook", (req, res) => {
   var req = https.request(post_options, function(res) {
     res.on('data', function (chunk) {
         console.log('Response => ' + chunk);
-        const timestamp = 
     });
   });
 
   console.log("Data to send 1 => " + JSON.stringify(post_options));
   req.write(post_data);
-  console.log("Data to send 2 => " + post_data);
-
   req.end();  
+  console.log("Data to send 2 => " + post_data);
 });
 
 // var timestamp = 1545186677000;
