@@ -24,7 +24,7 @@ app.post("/webhook", (req, res) => {
   res.sendStatus(200);  // responds with 200 - successfully received
   console.log(req.body);
 
-  const ChannelURL = req.body.channel_url;
+  const ChannelURL = req.body.channel.channel_url;
   console.log('Channel url => ' + ChannelURL);
   const AdminMsg = {
     "message_type":"ADMM",
@@ -42,8 +42,8 @@ app.post("/webhook", (req, res) => {
   };
 
   // Request admin message
-  var https = require('https'); 
-  var req = https.request(options, function(res) {
+  var http = require('http'); 
+  var req = http.request(options, function(res) {
   });
 });
   
