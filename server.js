@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 //app.use(bodyParser.urlencoded({ extended: true }));
 
 // Body of admin message 
-var post_data = JASON.stringify({
+var post_data = JSON.stringify({
   'message_type': 'ADMM',
   'message': 'Welcome to Group Channel!'
 });
