@@ -28,34 +28,9 @@ app.post("/webhook", (req, res) => {
 
   var ChannelURL = req.body.channel.channel_url;
 
-  // const ChannelURL = req.body.channel.channel_url;
-  // console.log('Channel url => ' + ChannelURL);
-  // const AdminMsg = {
-  //   "message_type":"ADMM",
-  //   "message": "Welcome to Group Channel!"
-  // }
-  // console.log('Admin msg =>' + JSON.stringify(AdminMsg));
-
-  // var options = {
-  //   host: "https://api-F58FD34C-1E49-41AE-ACB4-F82B889ABAE1.sendbird.com/v3/group_channels/" + ChannelURL + "/messages",
-  //   path: '/',
-  //   method: 'POST',
-  //   json: true,
-  //   header: headers,
-  //   body: AdminMsg
-  // };
-  // console.log('Data to send =>' + JSON.stringify(options));
-
-  // // Request admin message
-  // var http = require('http'); 
-  // var req = http.request(options, function(res) {
-  // });
-  
-  // req.write(userString);
-  // req.end();
-});
+  const ChannelURL = req.body.channel.channel_url;
   console.log('Channel url => ' + ChannelURL);
-  var AdminMsg = {
+  const AdminMsg = {
     "message_type":"ADMM",
     "message": "Welcome to Group Channel!"
   }
@@ -73,8 +48,9 @@ app.post("/webhook", (req, res) => {
 
   // Request admin message
   var http = require('http'); 
-  var req = http.request(options, function(res) {
-  });
+  //var req = http.request(options, function(res) {
+  //});
+});
   
   
 
