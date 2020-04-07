@@ -48,9 +48,11 @@ app.post("/webhook", (req, res) => {
   console.log('Data to send =>' + JSON.stringify(options));
 
   // Request admin message
-  var http = require('https'); 
-  var req = http.request(options, function(res) {
+  var https = require('https'); 
+  var req = https.request(options, function(res) {
+    console.log('Status => ' + res.statusCode);
   });
+  req.end();
 });
   
   
