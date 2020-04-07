@@ -17,12 +17,7 @@ var timestamp = + new Date();
 // Body of admin message 
 var post_data = JSON.stringify({
   "message_type": "ADMM",
-  "message": 
-  "┌────────────────────────────────┐ \n" +
-  "│                                │ \n" +
-  "│  *  Welcome to Group Chat!  *  │ \n" +
-  "│                                │ \n" +
-  "└────────────────────────────────┘ \n",
+  "message": "*  Welcome to Group Chat!  *",
   "created_at": timestamp 
 });
 var DateCreated = new Date(timestamp * 1000);
