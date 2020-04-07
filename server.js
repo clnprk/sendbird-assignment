@@ -25,6 +25,10 @@ app.post("/webhook", (req, res) => {
   console.log(req.body);
 
   const ChannelURL = req.body.channel_url;
+  const AdminMsg = {
+    "message_type":"ADMM",
+    "message": "Welcome to Group Channel!"
+  }
 
   var options = {
     host: "https://api-F58FD34C-1E49-41AE-ACB4-F82B889ABAE1.sendbird.com/v3/group_channels/" +    
@@ -32,8 +36,11 @@ app.post("/webhook", (req, res) => {
     port: 443,
     path: '/',
     method: 'POST',
-    header: headers
+    json: true,
+    header: headers,
+    body: AdminMsg
   };
+
   // Request admin message
   var https = require('https'); 
   var req = https.request(options, function(res) {
