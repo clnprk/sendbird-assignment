@@ -11,7 +11,7 @@ module.exports = () => {
       index: ['./src/js/index.js', './src/scss/index.scss'],
       main: ['./src/js/main.js', './src/scss/main.scss']
     },
-    target: 'node',
+    //target: 'node',
     output: {
       path: path.resolve(__dirname, './dist'),
       filename: 'sample.[name].js',
@@ -39,7 +39,7 @@ module.exports = () => {
                 options: {
                   module: true,
                   minimize: process.env.WEBPACK_MODE === PRODUCTION,
-                  // sourceMap: true,
+                  //sourceMap: true,
                   localIdentName: '[local]'
                 }
               },

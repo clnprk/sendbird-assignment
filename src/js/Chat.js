@@ -111,6 +111,7 @@ class Chat {
         this._addEventHandler();
         this._createChatElement(this.channel);
         targetEl.appendChild(this.element);
+
         sendbirdAction
           .getMessageList(this.channel, true)
           .then(messageList => {
@@ -118,6 +119,20 @@ class Chat {
             if (this.channel.isGroupChannel()) {
               sendbirdAction.markAsRead(this.channel);
             }
+
+            // Admin message
+            // const message = "Ths is admin message";
+            // const tempMessage = SendBirdAction.getInstance().sendAdminMessage({
+            //   channel: this.channel,
+            //   message,
+            //   handler: (message, error) => {
+            //     error
+            //       ? Chat.getInstance().main.removeMessage(tempMessage.reqId, true)
+            //       : Chat.getInstance().main.renderMessages([message]);
+            //   }
+            // });
+      
+        
             Spinner.remove();
           })
           .catch(error => {

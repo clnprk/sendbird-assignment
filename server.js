@@ -1,14 +1,35 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 
 //const PORT = 9000;
 const PORT = process.env.PORT || 9000;
 
 app.use(express.static('dist'));
 app.use(express.static('./'));
+app.use(bodyParser.json());
+
+const users = [
+  {
+      id: "rjames",
+      name: "LeBron James",
+      email: "james@gmail.com"
+  },
+  {
+      id: "scurry",
+      name: "Stephen Curry",
+      email: "scurry@gmail.com"
+  }
+];
+
 
 app.get('/', function(req, res) {
   res.sendfile('index.html');
+});
+
+app.get("/api/admin", (req, res) => {
+  console.log("Request from SendBirdAction");
+//  res.json(users);    
 });
 
 //app.listen(PORT);
