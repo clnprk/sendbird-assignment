@@ -26,8 +26,6 @@ app.post("/webhook", (req, res) => {
   res.sendStatus(200);  // responds with 200 - successfully received
   console.log(req.body);
 
-  var ChannelURL = req.body.channel.channel_url;
-
   const ChannelURL = req.body.channel.channel_url;
   console.log('Channel url => ' + ChannelURL);
   const AdminMsg = {
