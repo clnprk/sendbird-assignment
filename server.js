@@ -19,12 +19,13 @@ var temp =
 "*     Welcome to Group Chat!     *\n" +
 "*                                *\n" +
 "**********************************\n";
+
 console.log(temp);
 
 // Body of admin message 
 var post_data = JSON.stringify({
   "message_type": "ADMM",
-  "message": temp.replace(/\n/gi,"\\r\\n"),
+  "message": temp.replace("\n", "\\r\\n"),
   "created_at": timestamp 
 });
 var DateCreated = new Date(timestamp * 1000);
