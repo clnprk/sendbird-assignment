@@ -10,20 +10,19 @@ app.use(express.static('./'));
 app.use(bodyParser.json());
 
 var https = require('https');
-
 var moment = require('moment');
+
 var tm = moment().format('MMMM Do YYYY, h:mm:ss a');
 
+
 var timestamp = + new Date();
-var temp = "** Welcome to Group Chat! created on \nAAA " + tm;
+var temp = "** Welcome to Group Chat! created on \n\ AA \\n BB <br/> CC </br>" + tm;
 
 // "**********************************\n" + 
 // "*                                *\n" +
 // "*     Welcome to Group Chat!     *\n" +
 // "*                                *\n" +
 //"**********************************\n";
-
-console.log(temp);
 
 // Body of admin message 
 var post_data = JSON.stringify({
@@ -56,7 +55,7 @@ app.post("/webhook", (req, res) => {
   
   var req = https.request(post_options, function(res) {
     res.on('data', function (chunk) {
-        console.log('Response => ' + chunk);
+        //console.log('Response => ' + chunk);
     });
   });
 
