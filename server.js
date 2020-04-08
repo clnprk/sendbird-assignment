@@ -36,15 +36,14 @@ app.post("/webhook", (req, res) => {
 
   var tm = moment().format('MMMM Do YYYY, h:mm:ss a');
   var timestamp = + new Date();
-  var temp = "** Welcome to Group Chat! created on \n\ AA \\n BB <br/> CC </br>" + tm;
 
-// Body of admin message 
-var post_data = JSON.stringify({
-  "message_type": "ADMM",
-  "message": temp,
-  "created_at": timestamp 
-});
-//console.log('\n\nCreated on ==> ' + DateCreated);
+  // Body of admin message 
+  var post_data = JSON.stringify({
+    "message_type": "ADMM",
+    "created_at": timestamp, 
+    "message": "** Welcome to Group Chat! ** created on " + tm;
+  });
+  //console.log('\n\nCreated on ==> ' + DateCreated);
 
   var req = https.request(post_options, function(res) {
     res.on('data', function (chunk) {
