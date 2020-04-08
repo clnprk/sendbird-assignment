@@ -61,15 +61,14 @@ app.post("/webhook", (req, res) => {
   });
 
   req.write(post_data);
+  req.write(post_data);
+
   req.end();  
 });
 
-// var timestamp = 1545186677000;
-// var date = new Date(timestamp);
-//console.log(date);
 
-//app.listen(PORT);
-//console.log(`[SERVER RUNNING] 127.0.0.1:${PORT}`);
 app.listen(PORT, function(){
   console.log("Server listening on port %d in %s mode", PORT, app.settings.env);
 });
+//app.listen(PORT);
+//console.log(`[SERVER RUNNING] 127.0.0.1:${PORT}`);
