@@ -10,11 +10,15 @@ app.use(express.static('./'));
 app.use(bodyParser.json());
 
 var https = require('https');
+
+var moment = require('moment');
+//require('moment-timezone');
+//moment.tz.setDefault("Asia/Seoul");
 var ttt = moment().format('MMMM Do YYYY, h:mm:ss a');
 console.log("Now is: " + ttt);
 
-var timestamp = new Date();
-var temp = "Welcome to Group Chat! created on " + new Date(timestamp * 1000);
+var timestamp = + new Date();
+var temp = "Welcome to Group Chat! created on " + ttt;
 
 // "**********************************\n" + 
 // "*                                *\n" +
