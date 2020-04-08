@@ -11,7 +11,6 @@ module.exports = () => {
       index: ['./src/js/index.js', './src/scss/index.scss'],
       main: ['./src/js/main.js', './src/scss/main.scss']
     },
-    //target: 'node',
     output: {
       path: path.resolve(__dirname, './dist'),
       filename: 'sample.[name].js',

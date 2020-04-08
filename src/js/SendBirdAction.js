@@ -324,17 +324,6 @@ class SendBirdAction {
     });
   }
 
-  // sendAdminMessage({
-  //   channel,
-  //   message,
-  //   handler
-  // }) {
-  //   // generate new Admin message
-  //   return channel.sendAdminMessage(channel, message, (message, error) => {
-  //     if (handler) handler(message, error);
-  //   });
-  // }
-
   sendFileMessage({
     channel,
     file,
