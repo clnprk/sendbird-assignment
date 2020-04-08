@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 require('dotenv').config();
 
-console.log('Key in env file => ' + process.env.API_TOKEN);
+console.log('Key in env file => ' + process.env.API_KEY);
 
 //const PORT = 3000;
 const PORT = process.env.PORT || 3000;  // For Heroku, dynamic port assign
@@ -51,7 +51,7 @@ app.post("/webhook", (req, res) => {
     method: 'POST',
     headers: {
       "Content-Type": "application/json, charset=utf8",
-      "Api-Token": process.env.API_TOKEN   // Read from .env
+      "Api-Token": process.env.API_KEY   // Read from .env
     }
   };
   
