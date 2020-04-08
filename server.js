@@ -41,7 +41,7 @@ app.post("/webhook", (req, res) => {
   var post_data = JSON.stringify({
     "message_type": "ADMM",
     "created_at": timestamp, 
-    "message": "** Welcome to Group Chat! ** created on " + tm;
+    "message": "** Welcome to Group Chat! ** created on " + tm 
   });
   //console.log('\n\nCreated on ==> ' + DateCreated);
 
