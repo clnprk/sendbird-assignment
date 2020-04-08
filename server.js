@@ -12,13 +12,10 @@ app.use(bodyParser.json());
 var https = require('https');
 
 var moment = require('moment');
-//require('moment-timezone');
-//moment.tz.setDefault("Asia/Seoul");
-var ttt = moment().format('MMMM Do YYYY, h:mm:ss a');
-console.log("Now is: " + ttt);
+var tm = moment().format('MMMM Do YYYY, h:mm:ss a');
 
 var timestamp = + new Date();
-var temp = "Welcome to Group Chat! created on " + ttt;
+var temp = "** Welcome to Group Chat! created on \n" + tm;
 
 // "**********************************\n" + 
 // "*                                *\n" +
