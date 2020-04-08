@@ -1,7 +1,7 @@
 # Webhook Backend and Frontend for Group Channel
 This is an application that handles the webhook feature to send an admin message when creating a group chat channel. It's generated based on the [SendBird JavaScript - Web Basic Sample](https://github.com/sendbird/SendBird-JavaScript/tree/master/web-basic-sample).
 
-You can see how it works here: https://colin-sendbird-frontend.herokuapp.com
+You can see how it works here: https://colin-sendbird.herokuapp.com
 
 
 <br/><br/>
@@ -38,6 +38,6 @@ Please check `webpack.config.js` for settings.
 
 
 ## Demo
-- Please see how this application works here: https://colin-sendbird-frontend.herokuapp.com/
+- Please see how this application works here: https://colin-sendbird.herokuapp.com/
     >_Please note it may take a few seconds to awake the application if there hasn't been a connection for more than 30 minutes due to Heroku's configuration._
 - Also, you can see how it works with the video [here](http://keyzer.dscloud.me/shared/sendbird_demo.mp4).
