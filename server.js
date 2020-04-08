@@ -3,19 +3,17 @@ const app = express();
 const bodyParser = require('body-parser');
 require('dotenv').config();
 
-console.log('Key in env file => ' + process.env.API_KEY);
-
-//const PORT = 3000;
 const PORT = process.env.PORT || 3000;  // For Heroku, dynamic port assign
 
 app.use(express.static('dist'));
 app.use(express.static('./'));
 app.use(bodyParser.json());
-//app.use(bodyParser.urlencoded({ extended: true }));
 
 var https = require('https');
+var ttt = moment().format('MMMM Do YYYY, h:mm:ss a');
+console.log("Now is: " + ttt);
 
-var timestamp = + new Date();
+var timestamp = new Date();
 var temp = "Welcome to Group Chat! created on " + new Date(timestamp * 1000);
 
 // "**********************************\n" + 
@@ -43,15 +41,15 @@ app.get('/', function(req, res) {
 app.post("/webhook", (req, res) => {
   res.sendStatus(200);  // responds to the server with 200 - successfully received
 
-  const ChannelURL = req.body.channel.channel_url;
+  const channel_url = req.body.channel.channel_url;
 
   var post_options = {
     host: 'api-F58FD34C-1E49-41AE-ACB4-F82B889ABAE1.sendbird.com',
-    path: '/v3/group_channels/' + ChannelURL + '/messages',
+    path: '/v3/group_channels/' + channel_url + '/messages',
     method: 'POST',
     headers: {
       "Content-Type": "application/json, charset=utf8",
-      "Api-Token": process.env.API_KEY   // Read from .env
+      "Api-Token": process.env.API_KEY   // read from .env
     }
   };
   
@@ -61,7 +59,6 @@ app.post("/webhook", (req, res) => {
     });
   });
 
-  //console.log("Data to send 1 => " + JSON.stringify(post_options));
   req.write(post_data);
   req.end();  
 });
