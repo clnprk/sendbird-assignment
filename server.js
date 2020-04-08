@@ -15,7 +15,7 @@ var moment = require('moment');
 var tm = moment().format('MMMM Do YYYY, h:mm:ss a');
 
 var timestamp = + new Date();
-var temp = "** Welcome to Group Chat! created on \n" + tm;
+var temp = "** Welcome to Group Chat! created on \nAAA " + tm;
 
 // "**********************************\n" + 
 // "*                                *\n" +
