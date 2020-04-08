@@ -12,25 +12,6 @@ app.use(bodyParser.json());
 var https = require('https');
 var moment = require('moment');
 
-var tm = moment().format('MMMM Do YYYY, h:mm:ss a');
-
-
-var timestamp = + new Date();
-var temp = "** Welcome to Group Chat! created on \n\ AA \\n BB <br/> CC </br>" + tm;
-
-// "**********************************\n" + 
-// "*                                *\n" +
-// "*     Welcome to Group Chat!     *\n" +
-// "*                                *\n" +
-//"**********************************\n";
-
-// Body of admin message 
-var post_data = JSON.stringify({
-  "message_type": "ADMM",
-  "message": temp,
-  "created_at": timestamp 
-});
-//console.log('\n\nCreated on ==> ' + DateCreated);
 
 // GET
 app.get('/', function(req, res) {
@@ -52,16 +33,26 @@ app.post("/webhook", (req, res) => {
       "Api-Token": process.env.API_KEY   // read from .env
     }
   };
-  
+
+  var tm = moment().format('MMMM Do YYYY, h:mm:ss a');
+  var timestamp = + new Date();
+  var temp = "** Welcome to Group Chat! created on \n\ AA \\n BB <br/> CC </br>" + tm;
+
+// Body of admin message 
+var post_data = JSON.stringify({
+  "message_type": "ADMM",
+  "message": temp,
+  "created_at": timestamp 
+});
+//console.log('\n\nCreated on ==> ' + DateCreated);
+
   var req = https.request(post_options, function(res) {
     res.on('data', function (chunk) {
-        //console.log('Response => ' + chunk);
+        console.log('Response => ' + chunk);
     });
   });
 
   req.write(post_data);
-  req.write(post_data);
-
   req.end();  
 });
 
