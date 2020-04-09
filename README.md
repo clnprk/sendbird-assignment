@@ -25,13 +25,13 @@ You can see how it works here: https://colin-sendbird.herokuapp.com
         npm install
 
 
-2. Modify files
+2. Modify files  
 If you want to change `APP_ID`, change `APP_ID` in const.js to the other `APP_ID` you want.  
 You can test the sample with local server by running the following command.  
 
         npm run start:dev
 
-3. Build & Run
+3. Build & Run  
 When the modification is complete, you'll need to bundle the file using `webpack`. The bundled files are created in the `dist` folder.  
 Please check `webpack.config.js` for settings.    
 
